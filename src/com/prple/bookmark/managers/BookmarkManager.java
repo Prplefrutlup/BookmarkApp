@@ -13,11 +13,18 @@ public class BookmarkManager {
         return bookmarkManager;
     }
 
-    public Movie createMovie() {
+    public Movie createMovie(long id, String title, String profileUrl, int releaseYear, String[] cast, String[] directors, String genre, int imdbRating) {
+     
         Movie movie = new Movie();
-
-        //todo add code that instantiates a movie
-
+        movie.setId(id);
+        movie.setTitle(title);
+        movie.setProfileUrl(profileUrl);
+        movie.setResleaseYear(releaseYear);
+        movie.setCast(cast);
+        movie.setDirectors(directors);
+        movie.setGenre(genre);
+        movie.setImdbRating(imdbRating);
+        
         return movie;
     }
 
