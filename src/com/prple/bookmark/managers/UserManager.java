@@ -1,11 +1,15 @@
 package com.prple.bookmark.managers;
 
+import com.prple.bookmark.dao.UserDao;
 import com.prple.bookmark.entities.User;
 
 public class UserManager {
 
     //manager class that demonstrates singleton pattern
     private static UserManager instance = new UserManager();
+
+    //creates instance of UserDao
+    private static UserDao dao = new UserDao();
 
     //private constructor to not allow client to instantiate object of manager class
     private UserManager() {
@@ -27,5 +31,9 @@ public class UserManager {
         user.setUserType(userType);
 
         return user;
+    }
+
+    public User[] getUsers(){
+        return dao.getUsers();
     }
 }
